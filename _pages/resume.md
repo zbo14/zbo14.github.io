@@ -3,6 +3,7 @@ title: "Résumé"
 permalink: /résumé/
 layout: default
 ---
+# Résumé
 
 ## Technical Skills
 
@@ -31,7 +32,8 @@ layout: default
 
 ### Starry, Software Engineer // *Jun 2018 - Present*
 - Wrote code for and provided code review on several internal projects
-- Worked on a software library to communicate with field hardware and modify device configuration
+- Developed software library leveraging the Node crypto module that made encrypting/decrypting stuff more convenient for our team
+- Implemented service that spoke SNMP to fetch and modify configuration for field hardware.
 - Learned how to write cleaner code, weigh engineering decisions, and write full-coverage tests
 
 ### Ujo Music, Software Engineer // *Jun 2017 - Nov 2017*
@@ -78,5 +80,7 @@ Core techniques and applications of artificial intelligence. Representation retr
 
 ### Interests
 * Computer networking
+* Cybersecurity
 * Learning programming languages
-* Playing piano/keyboard
+* Playing piano/keyboard and occasionally saxophone
+* Twin Peaks

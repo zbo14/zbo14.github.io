@@ -18,6 +18,7 @@ title: Zachary Balder
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zbo14.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: zbo14
+linkedin_username: zachary-balder
 
 # Build settings
 markdown: kramdown
