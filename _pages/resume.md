@@ -11,19 +11,23 @@ layout: default
   <tbody>
     <tr>
       <td><b>Languages:</b></td>
-      <td><i>Javascript, Bash, Python, Rust</i></td>
+      <td><i>Javascript, Bash, Python, C</i></td>
     </tr>
     <tr>
       <td><b>Platforms:</b></td>
-      <td><i>Node, Docker</i></td>
+      <td><i>Node+npm, Docker</i></td>
     </tr>
     <tr>
       <td><b>Databases:</b></td>
       <td><i>MongoDB, Redis, Elasticsearch</i></td>
     </tr>
     <tr>
-      <td><b>Tools:</b></td>
-      <td><i>Git, Atom, npm, Vi(m)</i></td>
+      <td><b>Source Control:</b></td>
+      <td><i>git+GitHub</i></td>
+    </tr>
+    <tr>
+      <td><b>Utilities:</b></td>
+      <td><i>curl, dig, tcpdump, ping+traceroute</i></td>
     </tr>
   </tbody>
 </table>
@@ -32,8 +36,8 @@ layout: default
 
 ### Starry, Software Engineer // *Jun 2018 - Present*
 - Wrote code for and provided code review on several internal projects
-- Developed software library leveraging the Node crypto module that made encrypting/decrypting stuff more convenient for our team
-- Implemented service that spoke SNMP to fetch and modify configuration for field hardware.
+- Developed software library that made symmetric encryption/decryption more convenient for our team
+- Implemented SNMP service to fetch and modify configuration for field hardware.
 - Learned how to write cleaner code, weigh engineering decisions, and write full-coverage tests
 
 ### Ujo Music, Software Engineer // *Jun 2017 - Nov 2017*
