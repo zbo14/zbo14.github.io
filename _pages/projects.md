@@ -13,6 +13,20 @@ This is a little utility that sends a single ICMP echo request with some options
 
 The goal for this project was to make a proof-of-concept library/CLI that takes a filesystem path and password and encrypts/decrypts whatever's on the path.
 
+## rtunnel
+
+### [rtunnel](https://github.com/zbo14/rtunnel)
+
+`rtunnel` contains two components, a host and a client.
+
+The host, which is running behind a NAT let's say, opens a reverse tunnel to a publicly accessible host (i.e. `rtunneld` instance) and starts an SSH daemon listening on the local end of the tunnel.
+
+The client component, which is behind another NAT, authenticates with the publicly accessible host, requests port forwarding to the reverse tunnel, and SSH-es into the `rtunnel` host over the local socket.
+
+### [rtunneld](https://github.com/zbo14/rtunneld)
+
+This is the publicly-accessible SSH daemon that facilitates port-forwarding for `rtunnel` instances so they can open reverse tunnels and SSH into each other.
+
 ## socks*
 
 I wanted to run a SOCKS proxy on my local network by connecting/authenticating to an SSH daemon running somewhere else. Then I could tunnel my web traffic through SSH via the SOCKS proxy. The purpose of this project suite was first and foremost a learning exercise but also an attempt to make this process easier by automating certain steps with scripts and containerizing the services that need to run. Partway through, I realized some applications support HTTP proxies but not SOCKS proxies (who would've thunk). So I added an HTTP proxy component that translates CONNECT requests for a SOCKS proxy running on the same network. This way, clients can encrypt their web traffic even if they don't speak SOCKS.
