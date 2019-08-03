@@ -56,7 +56,6 @@ layout: default
 - Integrated and organized product inventory on e-commerce platform
 - Continued to improve functionality of site on a contract-work basis
 
-
 ### Education
 - Northwestern University // *Sep 2013 - Sep 2016*
 - Newton North High School // *Sep 2009 - June 2013*
