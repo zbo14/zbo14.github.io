@@ -37,7 +37,7 @@ layout: default
 ### Starry, Software Engineer // *Jun 2018 - Present*
 - Wrote code for and provided code review on several internal projects
 - Developed software library that made symmetric encryption/decryption more convenient for our team
-- Implemented SNMP service to fetch and modify configuration for field hardware.
+- Implemented SNMP service to fetch and modify configuration for field hardware
 - Learned how to write cleaner code, weigh engineering decisions, and write full-coverage tests
 
 ### Ujo Music, Software Engineer // *Jun 2017 - Nov 2017*
@@ -53,35 +53,35 @@ layout: default
 
 ### Flutistry, Website Development Intern	// *Jun 2014 - Dec 2014*
 - Developed multi-layered retail website for flute dealer/repair shop during Summer 2014
-- Integrated and organized product inventory on e-commerce platform
+- Integrated and organized product inventory on ecommerce platform
 - Continued to improve functionality of site on a contract-work basis
 
-### Education
+## Education
 - Northwestern University // *Sep 2013 - Sep 2016*
 - Newton North High School // *Sep 2009 - June 2013*
 
-### College Course Work
+## College Course Work
 
-#### **Economics, Microeconomics, Macroeconomics, Econometrics**
+### Economics, Microeconomics, Macroeconomics, Econometrics
 Microeconomics course sequence covering consumer choice, producer choice, and equilibria in competitive and monopolistic markets. Macroeconomics course covering employment, unemployment, consumption, investment, interest rates, inflation, exchange rates, and trade balance. Econometrics course covering statistics, univariate and multiple regression, simultaneous equations, measurement error, and instrumental variables.
 
-#### **Mathematics, Multivariate Calculus, Linear Algebra**
+### Mathematics, Multivariate Calculus, Linear Algebra
 Multivariate course sequence in vector algebra and functions, partial derivatives, double and triple integrals, cylindrical and spherical coordinates, line and surface integrals. Linear algebra course covering linear systems, matrix algebra, linear independence and determinants, eigenvalues and eigenvectors.
 
-#### **Introductory Statistics for the Social Sciences**
+### Introductory Statistics for the Social Sciences
 An introduction to basic concepts of statistics and probability. Covers methods of data collection, descriptive statistics, probability, estimation, sampling distributions, confidence intervals, and hypothesis testing.
 
-#### **Fundamentals of Computer Programming I, II**
+### Fundamentals of Computer Programming I, II
 Computer programming sequence taught in C++. Completed project model of the internet, which mocked networking and functionality of the web.
 
-#### **Intro to Artificial Intelligence**
+### Intro to Artificial Intelligence
 Core techniques and applications of artificial intelligence. Representation retrieving and application of knowledge for problem solving. Hypothesis exploration, theorem proving, vision, and neural networks. Implementation in Python.
 
-### Awards & Honors
+## Awards & Honors
 * Dean’s List // *Sep 2013 - Jun 2014, Sep 2014 - Jun 2015*
 * Awardee, Freshman Seminar Writing Program // *May 2015*
 
-### Interests
+## Interests
 * Computer networking
 * Cybersecurity
 * Learning programming languages
