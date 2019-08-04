@@ -1,4 +1,5 @@
 ---
+title: ""
 permalink: /projects/SOCKS-proxying/
 layout: default
 ---

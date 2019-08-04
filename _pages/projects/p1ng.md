@@ -1,4 +1,5 @@
 ---
+title: ""
 permalink: /projects/p1ng/
 layout: default
 ---
