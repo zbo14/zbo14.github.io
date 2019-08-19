@@ -5,6 +5,8 @@ layout: default
 ---
 # Projects
 
+## [insite](/projects/insite)
+
 ## [p1ng](/projects/p1ng/)
 
 ## [passworld](/projects/passworld/)
