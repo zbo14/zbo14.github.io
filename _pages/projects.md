@@ -12,5 +12,3 @@ layout: default
 ## [passworld](/projects/passworld/)
 
 ## [SOCKS proxying](/projects/SOCKS-proxying/)
-
-## [SSHing over reverse SSH tunnels](/projects/SSHing-over-reverse-SSH-tunnels/)
