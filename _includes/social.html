@@ -1,5 +1,6 @@
 <ul class="social-media-list">
   {%- if site.github_username -%}<li style="display:inline"><a href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg><!--<span class="username">{{ site.github_username| escape }}</span>--></a></li>{%- endif -%}
   {%- if site.linkedin_username -%}<li style="display:inline"><a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg> <!--<span class="username">{{ site.linkedin_username| escape }}</span>--></a></li>{%- endif -%}
+  <li style="display:inline"><a href="https://addons.mozilla.org/en-US/firefox/user/15257177/"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#mozilla' | relative_url }}"></use></svg></a></li>
   {%- if site.npm_username -%}<li style="display:inline"><a href="https://www.npmjs.com/~{{ site.npm_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#npm' | relative_url }}"></use></svg> <!--<span class="username">{{ site.npm_username| escape }}</span>--></a></li>{%- endif -%}
 </ul>
