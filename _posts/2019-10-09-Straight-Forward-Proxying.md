@@ -3,7 +3,7 @@ layout: post
 title: Straight forward proxying
 ---
 
-A couple weeks ago, I gave a presentation on forward proxies at my team's weekly meeting. I created a [repo](https://github.com/zbo14/forward-proxying) if you're interested. Also please, if you think there's something I should add or change, let me know in an issue! For the presentation, I read the `README.md` aloud, adding an extra detail here or there. Then I ran the code samples, configured my browser to use different types of forward proxies, and ran `tcpdump` to see where browser traffic was going.
+A couple weeks ago, I gave a presentation on forward proxies at my team's weekly meeting. I created a [repo](https://github.com/zbo14/forward-proxying) for it - if you think there's something I should add or change, let me know in an issue! For the presentation, I read the `README.md` aloud, adding an extra detail here and there. Then I ran the code samples, configured my browser to use different types of forward proxies, and ran `tcpdump` to see where browser traffic was going.
 
 Overall, I felt like the presentation went pretty well. I presented to my team (6 people) so it wasn't much pressure but was still a helpful exercise. There were a few things I took away, both technical and non-technical.
 
