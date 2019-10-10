@@ -15,6 +15,8 @@ layout: default
 
 ## [rad-tree](/projects/rad-tree/)
 
+## [recrypt](/projects/recrypt/)
+
 ## [SOCKS proxying](/projects/SOCKS-proxying/)
 
 ## [web-tree](/projects/web-tree/)
