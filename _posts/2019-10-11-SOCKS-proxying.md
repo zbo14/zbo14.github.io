@@ -25,7 +25,7 @@ $ sudo tcpdump -nnSX dst port 443
 	0x00b0:  3c85 3af4 fe73 47bd 2b78 5bfa 3181 ec3d  <.:..sG.+x[.1..=
 ```
 
-On the first line, we see two IP addresses: "10.12.117.160" and "151.101.249.140". The former is my laptop's address on the local network, which I verified with `ifconfig`. The latter is an IP address for reddit (or rather Fastly, the content delivery network (CDN) reddit uses). We can tell it's HTTPS traffic (read: encrypted) since it's destined for reserved port 443. Below, we see these garbled mess:
+On the first line, we see two IP addresses: "10.12.117.160" and "151.101.249.140". The former is my laptop's address on the local network, which I verified with `ifconfig`. The latter is an IP address for reddit (or rather Fastly, the content delivery network (CDN) reddit uses). We can tell it's HTTPS traffic (read: encrypted) since it's destined for reserved port 443. Below, we see this garbled mess:
 
 ```
 ..)A!@...;....E.
@@ -42,7 +42,7 @@ On the first line, we see two IP addresses: "10.12.117.160" and "151.101.249.140
 <.:..sG.+x[.1..=
 ```
 
-This is why HTTPS (HTTP + TLS) is so important and why you should be wary when visiting HTTP sites (read: unencrypted). TLS encrypts your traffic and prevents others on your local network from seeing the cleartext data (e.g. your passwords) that's sent back and forth. However, they *can* see the IP addresses your traffic is destined for. This by itself might seem like an invasion of privacy. If you're using a virtual private network (VPN), they wouldn't see the destination addresses; they'd see packets destined for the VPN. It's possible the VPN provider is watching where your packets are going. So are we just kicking the can down the road? Yes, but we'd hope the VPN provider is less inclined to watch our traffic/care where packets are going.
+This is why HTTPS (HTTP over TLS) is so important and why you should be wary when visiting HTTP sites (read: unencrypted). TLS encrypts your traffic and prevents others on the network from seeing the cleartext data (e.g. your passwords). However, they *can* see the IP addresses your traffic is destined for. This by itself might seem like an invasion of privacy. If you're using a virtual private network (VPN), they wouldn't see the destination addresses; they'd see packets destined for the VPN. It's possible the VPN provider is watching where your packets are going. So are we just kicking the can down the road? Yes, but we'd hope the VPN provider is less inclined to watch our traffic/care where packets are going.
 
 An alternative to using a VPN is proxying your web traffic. Later in this post, I'll discuss how you can do this by running a SOCKS proxy on your local machine that tunnels your web traffic over SSH to a daemon running in the cloud. This is smaller in scope than a VPN but it achieves the following: the ultimate destination of a packet is encrypted and prying eyes would only see a garbled mess destined for the cloud.
 
@@ -83,7 +83,7 @@ Even if your web traffic is going through a VPN, someone could monitor your DNS 
 
 Alright, let's get into it. Install [socksproxy](https://github.com/zbo14/socksproxy) on your local machine. Since `socksproxy`'s a systemd service, it runs on Linux. At the time of writing, I've tested it on Ubuntu and Raspbian.
 
-After that, install [socksd](https://github.com/zbo14/socksd) on a cloud instance (e.g. AWS, Digital Ocean). `socksd` is a systemd service too. At the time of writing, I've tested it on Ubuntu. You'll need to authorize `socksproxy` by copy-and-pasting `socksproxy`'s public key on your local machine (`/root/.ssh/socksproxy.pub`) to the cloud instance (`/home/socksproxy/.ssh/authorized_keys`). Now we can start `socksd`!
+After that, install [socksd](https://github.com/zbo14/socksd) on a cloud instance (e.g. AWS, Digital Ocean). `socksd` is a systemd service too. At the time of writing, I've only tested it on Ubuntu. You'll need to authorize `socksproxy` by copy-and-pasting `socksproxy`'s public key `/root/.ssh/socksproxy.pub` on your local machine to `/home/socksproxy/.ssh/authorized_keys` on the cloud instance. Now we can start `socksd`!
 
 ```
 $ sudo systemctl start socksd
