@@ -5,6 +5,8 @@ layout: default
 ---
 # Projects
 
+## [diy-vpn](/projects/diy-vpn)
+
 ## [dnsdump](/projects/dnsdump/)
 
 ## [nerv](/projects/nerv/)
