@@ -44,7 +44,22 @@ On the first line, we see two IP addresses: "10.12.117.160" and "151.101.249.140
 
 This is why HTTPS (HTTP over TLS) is so important and why you should be wary when visiting HTTP sites (read: unencrypted). TLS encrypts your traffic and prevents others on the network from seeing the cleartext data (e.g. your passwords). However, they *can* see the IP addresses your traffic is destined for. This by itself might seem like an invasion of privacy. If you're using a virtual private network (VPN), they wouldn't see the destination addresses; they'd see packets destined for the VPN. It's possible the VPN provider is watching where your packets are going. So are we just kicking the can down the road? Yes, but we'd hope the VPN provider is less inclined to watch our traffic/care where packets are going.
 
-An alternative to using a VPN is proxying your web traffic. Later in this post, I'll discuss how you can do this by running a SOCKS proxy on your local machine that tunnels your web traffic over SSH to a daemon running in the cloud. This is smaller in scope than a VPN but it achieves the following: the ultimate destination of a packet is encrypted and prying eyes would only see a garbled mess destined for the cloud.
+There's another thing we should consider. Your browser makes DNS requests to resolve hostnames like "reddit.com" to IP addresses. These requests aren't encrypted unless you're using DNS-over-HTTPS. Let's take a look at DNS traffic when we visit "foobar.com" in our browser.
+
+```
+$ sudo tcpdump -nnSX dst port 53
+
+16:23:46.087037 IP 10.12.117.160.65320 > 10.12.115.1.53: 56794+ A? foobar.com. (28)
+	0x0000:  18e8 2941 2140 8c85 903b c1d2 0800 4500  ..)A!@...;....E.
+	0x0010:  0038 d646 0000 ff11 e8b4 0a0c 75a0 0a0c  .8.F........u...
+	0x0020:  7301 ff28 0035 0024 0a07 ddda 0100 0001  s..(.5.$........
+	0x0030:  0000 0000 0000 0666 6f6f 6261 7203 636f  .......foobar.co
+	0x0040:  6d00 0001 0001
+```
+
+Once again, "10.12.117.160" is my laptop's address. The "10.12.115.1" address corresponds to the DNS server on the local network, and we're asking it to resolve "foobar.com". If your web traffic is going through a VPN but your cleartext DNS requests aren't, someone on the network could monitor them to see what sites you're visiting.
+
+How can we prevent the coffee shop Wi-Fi snooper from seeing the destination addresses of our packets and the hostnames we're visiting? We could pay to use a VPN service or run our own VPN, but this is a lot of work. Another option, which I'll discuss in greater detail, is running a SOCKS v5 proxy on our local machine that tunnels our web traffic and DNS requests over SSH (read: encrypted) to a daemon running in the cloud. From the cloud, the DNS requests are sent unencrypted to some DNS server. Once again, kicking the can down the road but I'd like to think we're kicking it to a part of the road where fewer people are watching.
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.2.3/mermaid.min.js"></script>
 
@@ -63,23 +78,6 @@ An alternative to using a VPN is proxying your web traffic. Later in this post, 
     LPORT-. 3 .-> 443
     end
 </div>
-
-There's one other thing we should consider before diving in. Your browser makes DNS requests to resolve hostnames like "reddit.com" to IP addresses. These requests aren't encrypted unless you're using DNS-over-HTTPS. Let's take a look at DNS traffic when we visit "foobar.com" in our browser.
-
-```
-$ sudo tcpdump -nnSX dst port 53
-
-16:23:46.087037 IP 10.12.117.160.65320 > 10.12.115.1.53: 56794+ A? foobar.com. (28)
-	0x0000:  18e8 2941 2140 8c85 903b c1d2 0800 4500  ..)A!@...;....E.
-	0x0010:  0038 d646 0000 ff11 e8b4 0a0c 75a0 0a0c  .8.F........u...
-	0x0020:  7301 ff28 0035 0024 0a07 ddda 0100 0001  s..(.5.$........
-	0x0030:  0000 0000 0000 0666 6f6f 6261 7203 636f  .......foobar.co
-	0x0040:  6d00 0001 0001
-```
-
-Once again, "10.12.117.160" is my laptop's address. The "10.12.115.1" address corresponds to the DNS server on the local network, and we're asking it to resolve "foobar.com".
-
-Even if your web traffic is going through a VPN, someone could monitor your DNS queries to see what sites you're visiting. Lucky for you, our proxy is SOCKS v5 compatible. This means it can proxy DNS requests in addition to web traffic. Therefore, your DNS requests will be encrypted and sent to the cloud daemon as well. From the cloud, the queries are sent unencrypted to some DNS server. Once again, kicking the can down the road but I'd like to think we're kicking it to a part of the road where fewer people are watching.
 
 Alright, let's get into it. Install [socksproxy](https://github.com/zbo14/socksproxy) on your local machine. Since `socksproxy`'s a systemd service, it runs on Linux. At the time of writing, I've tested it on Ubuntu and Raspbian.
 
