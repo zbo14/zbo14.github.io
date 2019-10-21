@@ -17,6 +17,7 @@ layout: default
     <tr>
       <td><b>Machine learning 🤖</b></td>
       <td>
+        <a href="/projects/genalg/">genalg</a>,
         <a href="/projects/nerv/">nerv</a>
       </td>
     </tr>
