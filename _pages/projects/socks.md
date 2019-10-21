@@ -1,6 +1,6 @@
 ---
 title: ""
-permalink: /projects/SOCKS-proxying/
+permalink: /projects/socks/
 layout: default
 ---
 # SOCKS proxying
