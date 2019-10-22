@@ -33,13 +33,16 @@ layout: default
     <tr>
       <td><b>Web 🌐</b></td>
       <td>
+        <a href="/projects/this-website">this website</a>,
         <a href="/projects/web-tree">web-tree</a>
       </td>
     </tr>
     <tr>
       <td><b>Other libraries</b></td>
       <td>
-        <a href="/projects/rad-tree">rad-tree</a>
+        <a href="/projects/bencode-hs">bencode-hs</a>,
+        <a href="/projects/rad-tree">rad-tree</a>,
+        <a href="/projects/tidepool">tidepool</a>
       </td>
     </tr>
   </tbody>
