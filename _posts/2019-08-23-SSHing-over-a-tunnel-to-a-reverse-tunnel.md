@@ -46,7 +46,7 @@ $ rtunnel init
 $ rtunnel start 12345
 ```
 
-This starts the daemon on port 12345. You'll need to open this port on your cloud instance. Still preferable to opening a port on your home router though. If your home/office networks have static public IPs, you should only allow traffic from those addresses instead of the entire world. 
+This starts the daemon on port 12345. You'll need to open this port on your cloud instance. Still preferable to opening a port on your home router though. If your home/office networks have static public IPs, you should only allow traffic from those addresses instead of the entire world.
 
 Then start an SSH server and configure `rtunnel` on the device you ultimately want to SSH into. In the scenario, this was the rpi but it could be another device. Change `PasswordAuthentication` to `no` in the SSH server configuration file (usually `/etc/ssh/sshd_config`) since we only want to allow clients with authorized keys.
 
@@ -98,4 +98,4 @@ Let's break this command down...
 
 You should now have a shell on the rpi! Go wild.
 
-##### *Shoutout to [ngriffiths21](https://ngriffiths21.github.io/) for helping with this post!*
+##### *Shoutout to [ngriffiths21](https://medium.com/@ngriffiths21) for helping with this post!*
