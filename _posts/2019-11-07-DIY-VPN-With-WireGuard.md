@@ -1,0 +1,49 @@
+---
+layout: post
+title: DIY VPN With WireGuard
+---
+
+I recently started working on a [project](/projects/diy-vpn/) to set up and run my own VPN using [OpenVPN](https://openvpn.net/) and [easy-rsa](https://github.com/OpenVPN/easy-rsa). Someone at work suggested I check out [WireGuard](https://www.wireguard.com/), a more modern and performant VPN that's open-source. Still under development at the time of writing, WireGuard is already supported by several major VPN providers. I decided to bootstrap my own WireGuard VPN and compare it with the OpenVPN solution.
+
+If you'd like to learn more about WireGuard, check out the website documentation and, if you really want to dig deep, read the [whitepaper](https://www.wireguard.com/papers/wireguard.pdf). There are other resources that detail the technical differences between OpenVPN and WireGuard. The purpose of this post is to detail the procedural differences between the two if you want to set up your own VPN. Of course, the procedural differences stem from the technical differences so there's no escaping a little technical discussion ;)
+
+A good place to start is authentication. A VPN server needs to be sure clients are who they say they are. Even if you're the only person using your VPN, you still might have multiple clients (e.g. your laptop and phone). Likewise, clients need to be sure the server is who it claims to be and not a malicious party masquerading as the VPN server. OpenVPN uses Transport Layer Security, or [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security), which provides authentication using digital certificates. When you visit an HTTPS site, your browser verifies the site's certificate, which was signed and issued by an entity called a Certificate Authority (CA). The (public) certificate asserts the site's ownership of a public key so we can trust signatures made by the corresponding (secret) private key (read up on [public-key/asymmetric cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) if you're unfamiliar). We assume the site's owners/administrators are the only ones in possession of the private key and, consequently, the only ones who can generate a valid signature using the private key. Therefore, if we receive a valid signature, we can be fairly certain the party we're talking to is the owner of the private key and, according to the trusted Certificate Authority, the rightful owner of the public key and domain.
+
+When setting up an OpenVPN server, we need to create a Public Key Infrastructure (PKI). This includes a private key and self-signed certificate for our trusted CA, a private key and CA-signed certificate for the VPN server, and a private key and CA-signed certificate for each client. In addition, we'll create a Certificate Revocation List (CRL) for keeping track of clients who have been removed/shouldn't be able to authenticate with the server any longer. While authentication with digital certificates makes sense for an open infrastructure like the web, it's a pretty heavy-handed approach for our personal VPN. The server host has to generate keys and certificates, which then have to be distributed to clients along with the CA certificate and most likely a config file. We can zip and encrypt a directory containing these files to ease distribution, but it's still kind of a pain to `sftp` the files to my laptop, unzip them, and iTunes sync them to my iPhone.
+
+WireGuard does away with TLS, so no certificates required! Instead it uses [Cryptokey Routing](https://www.wireguard.com/#cryptokey-routing) to authenticate *peers* (i.e. clients and servers) and route packets. Each peer has a public/private key pair and a list of allowed IP addresses. When peer1 wants to send a packet to peer2, it encrypts the packet using a [symmetric key established during the handshake](https://www.wireguard.com/protocol/) with peer2, so that peer2 is the only party who can feasibly decrypt it. Peer1 then sends the encrypted packet over the wire. Peer2 receives the packet, decrypts it with the symmetric key, and checks the source IP. If the address falls in the range of allowed IPs for peer1, peer2 accepts the packet. Otherwise, the packet's dropped.
+
+Suppose peer2 accepts a packet from peer1 and the destination IP address matches an allowed IP address for peer3. Peer2 then encrypts the packet with the secure session key negotiated with peer3 and sends the result to peer3. The following quote from the [website documentation](https://www.wireguard.com/#cryptokey-routing) nicely summarizes this functionality:
+
+> when sending packets, the list of allowed IPs behaves as a sort of routing table, and when receiving packets, the list of allowed IPs behaves as a sort of access control list.
+
+The destination IP address doesn't have to be that of another peer. It could be an IP address for "reddit.com". If we're just using the VPN for web browsing, packets sent from the client to the server will be forwarded to "reddit.com" or wherever else we're browsing; not to another peer. The server then receives packets from the site, encrypts them with the session key and sends them to the peer. The server is certain client packets are from the client who claims to have sent them thanks to source IP checking and session-key negotiation facilitated by public-key authentication (i.e. the "access control list" component mentioned above).
+
+How is the installation process and user flow different for WireGuard? For one, we don't have to architect a whole PKI; we just generate server credentials during set up. In addition, it's easier to add clients. We no longer have to generate credentials server-side, zip directories, and distribute them to clients. We can generate the credentials client-side (even on my iPhone!) and execute a single command on the server to add the client. This command requires two inputs, the client's tunnel IP address and its public key. The former is easy to type and the latter, if you can't copy-and-paste, is much less painful to type than a certificate. WireGuard uses 32-byte, base64-encoded public keys; this comes out to 44 characters you have to type. Not ideal, but certainly better than this:
+
+```
+-----BEGIN CERTIFICATE-----
+MIIDQjCCAioCCQCxJTU+JC8brDANBgkqhkiG9w0BAQsFADBjMQswCQYDVQQGEwJV
+UzELMAkGA1UECAwCTlkxDDAKBgNVBAcMA05ZQzEPMA0GA1UECgwGZm9vYmFyMRQw
+EgYDVQQLDAtFbmdpbmVlcmluZzESMBAGA1UEAwwJMTI3LjAuMC4xMB4XDTE5MDgx
+MzE3NTEyNFoXDTIwMDgxMjE3NTEyNFowYzELMAkGA1UEBhMCVVMxCzAJBgNVBAgM
+Ak5ZMQwwCgYDVQQHDANOWUMxDzANBgNVBAoMBmZvb2JhcjEUMBIGA1UECwwLRW5n
+aW5lZXJpbmcxEjAQBgNVBAMMCTEyNy4wLjAuMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAMuF/5O5QCz8/oCLw6WC5RIQtO+8w4yQvJhW4ul8C9ZFfKN9
+5qV17VM7V/6Nq2mlUQbuv8nL2P+KNS594CgOgn7zHe916V7E0pkwNbGfvoRVpYk1
+tyLmo7JYRa/ZmZd2Gzct5nJsHSQ1CoZMnihzD5aMhlORXqhhj70Io5PUvQK74sO8
+8xUHgb3dhCoPki4MEaNvOs6ur1Ldvbq9Fk9q/HxNxXzAKYDG7qsIn4JXIVeleSeE
+Pa3fuqAhIYEeGI/MLhhYvZPf49uMxn8dat0AIlPGosKmRCEvfp5REuSr10PKpEn7
+Hf4+fSCByAoSZgJ3Ge1qvg6YXnxZNS3hrWFNskkCAwEAATANBgkqhkiG9w0BAQsF
+AAOCAQEAwYtWSQo6bToy1Bewyn+id7/iGd54wt6fKuFzGIFTSaaxRR6ACu7mKjKF
+xYoz5WC8j7cI53DbX7TLIZ594WrGBTTw1f9QDoin1lxT6QAcVhsCAPpToebXzljf
+q9YToAdeeB7VS6NFWN39+ygOg2SBpIAZ+WQuPp0voVCn40yNKUd/VL+IEKWAQ1N9
+f7gAuvP5TFIEhRCoJZDhZ1DOvyT+VI1mXD4JxhV9hXPppcM2LWllDHrU+atWmX22
+9IgAtQwg6C2cZgwt3C7NnU6iy2y/uuI8GhwfjL3KNhAiK3lGScn96NVjoIyzpp3f
+ovDJKOCXlo9RAvyDehNOBYqzAMIkRQ==
+-----END CERTIFICATE-----
+```
+
+Removing clients is also simpler with WireGuard. It's a single command on the server where you specify the public key of the client you want to remove. Earlier I mentioned that our OpenVPN infrastructure has a certificate revocation list (CRL). This is required if we want to remove clients. Essentially, the CA maintains state for which certificates it's signed/issued to clients *and* which certificates it's signed but it no longer deems valid for authentication purposes (this is the CRL). With WireGuard's Cryptokey Routing, the server *only* maintains a whitelist of public keys and tunnel addresses for clients that *can* authenticate with the server. Removing a client means removing that client's public key and associated address from the whitelist such that it can't authenticate. From a user perspective, adding/removing clients is relatively fluid for both OpenVPN and WireGuard, especially with some bespoke shell scripting. However, architecting a PKI introduces a lot of complexity we don't necessarily want. Less unneeded complexity hopefully means fewer problems when we try to extend or modify the infrastructure and easier troubleshooting when bad things happen.
+
+I've talked a lot about the server side of things. Configuring things client-side is still a bit of work. With WireGuard, we have to specify the server public key, IP address, and the client's tunnel address during the set-up process. And if we're on mobile/not using a pre-made config file, we need to specify allowed addresses for the server (i.e "0.0.0.0/0" in cidr notation) and the tunnel address for the DNS server. With OpenVPN, we circumvented some of these steps by distributing zipped directories with client and server certificates and config files containing information such as the server IP. Having to fill in a few extra fields on the WireGuard iPhone app bugs me less than having to zip, encrypt, and move directories around though.
