@@ -11,8 +11,10 @@ After writing the first version of the library, I created a [Firefox add-on](htt
 
 There's a minimal UI in devtools where you can filter/show part of the tree under a particular domain or wipe the tree state clean. If you filtered for "foobar.com" with the first version of the add-on, it would spit out a text representation of the *entire* subtree under "foobar.com" (if any). This subtree could be pretty big/difficult to visually parse all at once. The newer version of the add-on renders an HTML tree. You can click a domain or path to expand/collapse the corresponding branch, so you can visually parse the tree in digestible chunks.
 
-The UI still needs work, but I'm fairly happy with the proof-of-concept. The library is open-source so if you find a bug, would like a feature added, or would like to improve the UI (hint hint) let me know in an issue! Below's a URL tree I generated for this website. 
-
+The UI still needs work, but I'm fairly happy with the proof-of-concept. The library is open-source so if you find a bug, would like a feature added, or would like to improve the UI (hint hint) let me know in an issue. Below, I generated a tree for this website so you can click through and try it out!
+<br><br>
+<html>
+<head>
 <style>
   .web-tree-btn {
     background-color: #eee;
@@ -37,37 +39,8 @@ The UI still needs work, but I'm fairly happy with the proof-of-concept. The lib
     background-color: #f1f1f1;
   }
 </style>
-
-<script>
-  const btns = document.getElementsByClassName('web-tree-btn')
-
-  for (const btn of btns) {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active')
-
-      const div = btn.nextElementSibling
-
-      if (!div.style.display || div.style.display === 'none') {
-        div.style.display = 'block'
-        return
-      }
-
-      div.style.display = 'none'
-
-      const btns = div.querySelectorAll('.web-tree-btn')
-      const divs = div.querySelectorAll('.web-tree-div')
-
-      for (const btn of btns) {
-        btn.classList.remove('active')
-      }
-
-      for (const div of divs) {
-        div.style.display = 'none'
-      }
-    })
-  }
-</script>
-
+</head>
+<body>
 <button class="web-tree-btn">.io</button>
 <div class="web-tree-div">
   <button class="web-tree-btn">.github</button>
@@ -213,3 +186,34 @@ The UI still needs work, but I'm fairly happy with the proof-of-concept. The lib
     </div>
   </div>
 </div>
+<script>
+  const btns = document.getElementsByClassName('web-tree-btn')
+
+  for (const btn of btns) {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active')
+
+      const div = btn.nextElementSibling
+
+      if (!div.style.display || div.style.display === 'none') {
+        div.style.display = 'block'
+        return
+      }
+
+      div.style.display = 'none'
+
+      const btns = div.querySelectorAll('.web-tree-btn')
+      const divs = div.querySelectorAll('.web-tree-div')
+
+      for (const btn of btns) {
+        btn.classList.remove('active')
+      }
+
+      for (const div of divs) {
+        div.style.display = 'none'
+      }
+    })
+  }
+</script>
+</body>
+<html>
