@@ -11,7 +11,7 @@ layout: default
   <tbody>
     <tr>
       <td><b>Languages:</b></td>
-      <td><i>Javascript, Bash, Python, C</i></td>
+      <td><i>Javascript, Python, Bash, C</i></td>
     </tr>
     <tr>
       <td><b>Platforms:</b></td>
@@ -26,8 +26,16 @@ layout: default
       <td><i>git+GitHub</i></td>
     </tr>
     <tr>
-      <td><b>Utilities:</b></td>
-      <td><i>curl, dig, tcpdump, ping+traceroute</i></td>
+      <td><b>Tools:</b></td>
+      <td><i>curl, dig, ping+traceroute, tcpdump+Wireshark, mitmproxy</i></td>
+    </tr>
+    <tr>
+      <td><b>Cloud:</b></td>
+      <td><i>AWS, DigitalOcean</i></td>
+    </tr>
+    <tr>
+      <td><b>Proxies/VPNs:</b></td>
+      <td><i>HTTP, SSH+SOCKS, OpenVPN, WireGuard</i></td>
     </tr>
   </tbody>
 </table>
