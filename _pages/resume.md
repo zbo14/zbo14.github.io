@@ -15,15 +15,11 @@ layout: default
     </tr>
     <tr>
       <td><b>Platforms:</b></td>
-      <td><i>Node+npm, Docker</i></td>
+      <td><i>git+GitHub, Node+npm, Docker</i></td>
     </tr>
     <tr>
       <td><b>Databases:</b></td>
       <td><i>MongoDB, Redis, Elasticsearch</i></td>
-    </tr>
-    <tr>
-      <td><b>Source Control:</b></td>
-      <td><i>git+GitHub</i></td>
     </tr>
     <tr>
       <td><b>Tools:</b></td>
