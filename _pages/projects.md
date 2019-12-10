@@ -33,7 +33,6 @@ layout: default
     <tr>
       <td><b>Web 🌐</b></td>
       <td>
-        <a href="/projects/duckgo/">duckgo</a>,
         <a href="/projects/this-website/">this website</a>,
         <a href="/projects/web-tree/">web-tree</a>
       </td>
