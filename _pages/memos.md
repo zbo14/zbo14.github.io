@@ -20,6 +20,13 @@ I like to play keyboard and sing sometimes. I've tried my hand at recording with
 </audio>
 <br>
 
+## Lover, You Should've Come Over - Jeff Buckley
+(first half)
+<audio controls>
+  <source src="/assets/audio/Lover-You-Should've-Come-Over.m4a">
+</audio>
+<br>
+
 ## Time Again - original
 <audio controls>
   <source src="/assets/audio/Time-Again.m4a">
