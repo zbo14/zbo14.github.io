@@ -20,6 +20,12 @@ I like to play keyboard and sing sometimes. I've tried my hand at recording with
 </audio>
 <br>
 
+## Lavender - Two Door Cinema Club
+<audio controls>
+  <source src="/assets/audio/Lavender.m4a">
+</audio>
+<br>
+
 ## Lover, You Should've Come Over - Jeff Buckley
 (first half)
 <audio controls>
