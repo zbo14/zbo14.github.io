@@ -33,6 +33,12 @@ I like to play keyboard and sing sometimes. I've tried my hand at recording with
 </audio>
 <br>
 
+## Love's Been Getting Me Down - original
+<audio controls>
+  <source src="/assets/audio/Love's-Been-Getting-Me-Down.m4a">
+</audio>
+<br>
+
 ## Time Again - original
 <audio controls>
   <source src="/assets/audio/Time-Again.m4a">
