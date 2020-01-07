@@ -8,4 +8,4 @@ layout: default
 
 A CLI tool to detect and confirm HTTP/S desync vulnerabilities.
 
-Check out the [post](/2020/01/05/Detect-and-confirm-desync-vulnerabilities.html)!
+Check out the [post](/2020/01/07/Detect-and-confirm-desync-vulnerabilities.html)!
