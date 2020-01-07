@@ -7,7 +7,7 @@ I recently reread [this post](https://portswigger.net/research/http-desync-attac
 
 For those unfamiliar, an HTTP/S desync vulnerability arises when a frontend server (e.g. CDN) handles web requests before sending them to a backend server and the two servers disagree where the requests begin and end. As a result, the servers process different requests. This is problematic because an attacker could "smuggle" a malicious request past the frontend server that would normally be blocked and the backend server processes the request and responds.
 
-How can an attacker get the frontend and backend servers to disagree on request boundaries? One way is to send an HTTP/S request with a [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header *and* a [Transfer-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding) header. In some cases, the frontend refers to one header (e.g. Content-Length) and the backend refers to the other (Transfer-Encoding). The frontend server might see the following.
+How can an attacker get the frontend and backend servers to disagree on request boundaries? One way is to send an HTTP/S request with a [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Length) header *and* a [Transfer-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding) header. In some cases, the frontend refers to one header (e.g. Content-Length) and the backend refers to the other (Transfer-Encoding). The frontend server sees the following.
 
 **Note:** CRLFs are omitted.
 
@@ -26,7 +26,7 @@ Host: www.foobar.com
 ===========================
 ```
 
-But the backend server would see the following.
+But the backend server sees the following.
 
 ```
 ===========================
@@ -44,8 +44,8 @@ Host: www.foobar.com
 ===========================
 ```
 
-When the frontend receives the byte stream it sees one request. When the backend receives the byte stream it sees *two* requests. The frontend normally responds to a request for `/secret` stuff with a 403. Since it doesn't see the request - it thinks it's part of the first request's body - it happily forwards the octets to the backend server. Suppose the backend server doesn't provide any protections for the `/secret` stuff. It happily fetches the sensitive content and responds to the second request.
+When the frontend receives the octet stream, it sees one request with the specified Content-Length. The frontend normally responds to a request for `/secret` stuff with a 403. Since it doesn't see that request - it thinks it's part of the first request's body - it happily forwards the octets to the backend server. When the backend receives the octet stream it sees *two* requests because it interprets the `0` in the first request body as a terminating chunk of length zero. If the backend server doesn't provide protections for the `/secret` stuff, it happily fetches the sensitive content and responds to the second request.
 
-Yes, this is a contrived example but hopefully it conveys the concept of desync vulnerabilities and how they can be exploited to smuggle HTTP/S requests. Reading through the aforementioned post, I noticed the process for confirming and detecting these vulnerabilities is fairly uniform. I created a [proof-of-concept](https://github.com/zbo14/desync) that uses desync trickery to perform these two steps (no exploitation (yet)). To detect a vulnerability we use request length discrepancy to force a timeout. Upon timeout, we confirm the vulnerability by smuggling a request to an endpoint we're fairly certain doesn't exist. A 404 response or redirect means the backend processed the smuggled request and is vulnerable.
+Yes, this is a contrived example but hopefully it conveys the concept of desync vulnerabilities and how they can be exploited to smuggle HTTP/S requests. Rereading through the aforementioned post, I noticed the process for confirming and detecting these vulnerabilities is fairly uniform. I created a [proof-of-concept](https://github.com/zbo14/desync) that uses desync trickery to perform these two steps (no exploitation (yet)). To detect a vulnerability we use request length discrepancy to force a timeout. Upon timeout, we confirm the vulnerability by smuggling a request to an endpoint we're fairly certain doesn't exist. A 404 response or redirect means the backend processed the smuggled request and is vulnerable.
 
 The [readme](https://github.com/zbo14/desync/blob/master/README.md) has some more information. Otherwise, if you're interested check out the source. If you have an idea to make the tool better, let me know in an issue!
