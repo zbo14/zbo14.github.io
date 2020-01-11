@@ -40,7 +40,7 @@ layout: default
 
 ### Starry, Software Engineer // *Jun 2018 - Present*
 - Wrote code for and provided code review on several internal projects
-- Developed software library that made symmetric encryption/decryption more convenient for our team
+- Developed software library that made symmetric encryption/decryption more convenient for team
 - Implemented SNMP service to fetch and modify configuration for field hardware
 - Learned how to write cleaner code, weigh engineering decisions, and write full-coverage tests
 

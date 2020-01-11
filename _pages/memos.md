@@ -8,6 +8,12 @@ I like to play keyboard and sing sometimes. I've tried my hand at recording with
 
 **PSA:** you probably need to bump the volume to hear vocals.
 
+## A Dull Glow - original
+<audio controls>
+  <source src="/assets/audio/A-Dull-Glow.m4a">
+</audio>
+<br>
+
 ## I Know It's Over - The Smiths
 <audio controls>
   <source src="/assets/audio/I-Know-It's-Over.m4a">
