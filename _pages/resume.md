@@ -11,27 +11,27 @@ layout: default
   <tbody>
     <tr>
       <td><b>Languages:</b></td>
-      <td><i>Javascript, Python, Bash, C</i></td>
+      <td><i>Javascript, Python, Bash</i></td>
     </tr>
     <tr>
       <td><b>Platforms:</b></td>
-      <td><i>git+GitHub, Node+npm, Docker</i></td>
+      <td><i>git+GitHub, Node+npm, Docker+Compose</i></td>
     </tr>
     <tr>
       <td><b>Databases:</b></td>
       <td><i>MongoDB, Redis, Elasticsearch</i></td>
     </tr>
     <tr>
-      <td><b>Tools:</b></td>
-      <td><i>curl, dig, ping+traceroute, tcpdump+Wireshark, mitmproxy</i></td>
-    </tr>
-    <tr>
       <td><b>Cloud:</b></td>
       <td><i>AWS, DigitalOcean</i></td>
     </tr>
     <tr>
-      <td><b>Proxies/VPNs:</b></td>
-      <td><i>HTTP, SSH+SOCKS, OpenVPN, WireGuard</i></td>
+      <td><b>Proxies:</b></td>
+      <td><i>HAProxy, HTTP/S, SSH+SOCKS</i></td>
+    </tr>
+    <tr>
+      <td><b>VPN:</b></td>
+      <td><i>OpenVPN, WireGuard</i></td>
     </tr>
   </tbody>
 </table>
@@ -42,7 +42,7 @@ layout: default
 - Wrote code for and provided code review on several internal projects
 - Developed software library that made symmetric encryption/decryption more convenient for team
 - Implemented SNMP service to fetch and modify configuration for field hardware
-- Learned how to write cleaner code, weigh engineering decisions, and write full-coverage tests
+- Learned how to write clean code, weigh engineering decisions, and write full-coverage tests
 
 ### Ujo Music, Software Engineer // *Jun 2017 - Nov 2017*
 - Worked on project for querying/persisting linked metadata (IPLD) and media to IPFS
