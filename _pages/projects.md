@@ -34,6 +34,7 @@ layout: default
       <td><b>Web 🌐</b></td>
       <td>
         <a href="/projects/desync/">desync</a>,
+        <a href="/projects/shortn/">shortn</a>,
         <a href="/projects/this-website/">this website</a>,
         <a href="/projects/web-tree/">web-tree</a>
       </td>
