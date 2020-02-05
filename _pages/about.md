@@ -5,4 +5,6 @@ layout: default
 ---
 # whoami?
 
-My name's Zach and I'm a software engineer currently working at [Starry](https://starry.com/) on the Cloud Services team. I enjoy hands-on development, pet projects, pets, coffee and beer as the bookends to my day, and one-pot pasta.
+Hi, my name's Zach! I'm a backend software engineer interested in web application security and computer networking. I enjoy hands-on development, pet projects, pets, coffee and beer as the bookends to my day.
+
+I'm currently looking for ~opportunities~ so if you're hiring or just want to connect, feel free to drop me a line at zmbalder<<at>>gmail<<dot>>com.
