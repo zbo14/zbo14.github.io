@@ -7,7 +7,7 @@ Oh, what to do with passwords...
 
 Maybe you have one you use for everything. It's easy for you to remember and maybe difficult for others to guess. However, an attacker that discovers your password can access any number of services you use and your personal information.
 
-A much better alternative is using a password manager that generates unique, hard-to-guess passwords for each service you use. These passwords are typically encrypted with a password you provide and then stored in a database somewhere. When you need to log in to a service, you give the password manager *your* password. It then decrypts the password it generated for that account.
+A much better alternative is using a password manager that generates unique, hard-to-guess passwords for each service you use. These passwords are typically encrypted and stored in a database somewhere. You provide the password manager with a password that *you* remember. The password manager asks you for this password when you need an account password to login.
 
 Something about storing this information on somebody else's disk space irks me. Perhaps the paranoia is unfounded - the passwords are encrypted, or at least in theory they are. If an attacker compromises the system and fails to crack the encryption, they could wipe the database. Unlikely, but still a cause for concern. I wanted to design my own password storage solution so I wasn't reliant on external infrastructure and security.
 
