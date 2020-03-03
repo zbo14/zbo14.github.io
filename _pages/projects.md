@@ -40,9 +40,10 @@ layout: default
       </td>
     </tr>
     <tr>
-      <td><b>Other libraries</b></td>
+      <td><b>Other</b></td>
       <td>
         <a href="/projects/bencode-hs/">bencode-hs</a>,
+        <a href="/projects/luhn-cli/">luhn-cli</a>,
         <a href="/projects/rad-tree/">rad-tree</a>,
         <a href="/projects/tidepool/">tidepool</a>
       </td>
