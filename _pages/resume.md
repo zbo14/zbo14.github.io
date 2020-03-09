@@ -38,11 +38,11 @@ layout: default
 
 ## Work Experience
 
-### Starry, Software Engineer // *Jun 2018 - Present*
+### Starry, Software Engineer // *Jun 2018 - Feb 2020*
 - Wrote code for and provided code review on several internal projects
-- Developed software library that made symmetric encryption/decryption more convenient for team
+- Developed software library that made symmetric encryption more convenient
 - Implemented SNMP service to fetch and modify configuration for field hardware
-- Learned how to write clean code, weigh engineering decisions, and write full-coverage tests
+- Learned how to weigh engineering decisions and write full-coverage tests
 
 ### Ujo Music, Software Engineer // *Jun 2017 - Nov 2017*
 - Worked on project for querying/persisting linked metadata (IPLD) and media to IPFS
@@ -56,7 +56,7 @@ layout: default
 - Wrote tests and benchmarks for API calls
 
 ### Flutistry, Website Development Intern	// *Jun 2014 - Dec 2014*
-- Developed multi-layered retail website for flute dealer/repair shop during Summer 2014
+- Developed multi-layered retail website for flute dealer/repair shop
 - Integrated and organized product inventory on ecommerce platform
 - Continued to improve functionality of site on a contract-work basis
 

@@ -3,57 +3,47 @@ title: "Projects"
 permalink: /projects/
 layout: default
 ---
-# Projects
-
-<table>
-  <tbody>
-    <tr>
-      <td><b>Configuration ⚙️</b></td>
-      <td>
-        <a href="/projects/dotfiles/">dotfiles</a>,
-        <a href="/projects/install-tools/">install-tools</a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>Encryption 🔐</b></td>
-      <td>
-        <a href="/projects/passworld/">passworld</a>,
-        <a href="/projects/recrypt/">recrypt</a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>Machine learning 🤖</b></td>
-      <td>
-        <a href="/projects/genalg/">genalg</a>,
-        <a href="/projects/nerv/">nerv</a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>Networking 📶</b></td>
-      <td>
-        <a href="/projects/diy-vpn/">diy-vpn</a>,
-        <a href="/projects/p1ng/">p1ng</a>,
-        <a href="/projects/socks/">socks</a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>Web 🌐</b></td>
-      <td>
-        <a href="/projects/desync/">desync</a>,
-        <a href="/projects/dnsdump/">dnsdump</a>,
-        <a href="/projects/shortn/">shortn</a>,
-        <a href="/projects/this-website/">this website</a>,
-        <a href="/projects/web-tree/">web-tree</a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>Other</b></td>
-      <td>
-        <a href="/projects/bencode-hs/">bencode-hs</a>,
-        <a href="/projects/luhn-cli/">luhn-cli</a>,
-        <a href="/projects/rad-tree/">rad-tree</a>,
-        <a href="/projects/tidepool/">tidepool</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <div style="display: flex;">
+    <div class="project-category">
+      <h2>Configuration ⚙️</h2>
+      <a class="project-link" href="/projects/dotfiles/">dotfiles</a>
+      <a class="project-link" href="/projects/install-tools/">install-tools</a>
+    </div>
+    <div class="project-category">
+      <h2>Networking 📶</h2>
+      <a class="project-link" href="/projects/diy-vpn/">diy-vpn</a>
+      <a class="project-link" href="/projects/p1ng/">p1ng</a>
+      <a class="project-link" href="/projects/socks/">socks</a>
+    </div>
+  </div>
+  <div style="display: flex;">
+    <div class="project-category">
+      <h2>Encryption 🔐</h2>
+      <a class="project-link" href="/projects/passworld/">passworld</a>
+      <a class="project-link" href="/projects/recrypt/">recrypt</a>
+    </div>
+    <div class="project-category">
+      <h2>Web 🌐</h2>
+      <a class="project-link" href="/projects/desync/">desync</a>
+      <a class="project-link" href="/projects/dnsdump/">dnsdump</a>
+      <a class="project-link" href="/projects/shortn/">shortn</a>
+      <a class="project-link" href="/projects/web-tree/">web-tree</a>
+      <a class="project-link" href="/projects/this-website/">website</a>
+    </div>
+  </div>
+  <div style="display: flex;">
+    <div class="project-category">
+      <h2>Machine learning 🤖</h2>
+      <a class="project-link" href="/projects/genalg/">genalg</a>
+      <a class="project-link" href="/projects/nerv/">nerv</a>
+    </div>
+    <div class="project-category">
+      <h2>Miscellaneous</h2>
+      <a class="project-link" href="/projects/bencode-hs/">bencode-hs</a>
+      <a class="project-link" href="/projects/luhn-cli/">luhn-cli</a>
+      <a class="project-link" href="/projects/rad-tree/">rad-tree</a>
+      <a class="project-link" href="/projects/tidepool/">tidepool</a>
+    </div>
+  </div>
+</div>

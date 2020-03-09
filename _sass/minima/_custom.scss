@@ -1,0 +1,38 @@
+/**
+ * Music stuff
+ */
+
+.song-title{
+  margin-bottom: 4px;
+}
+
+.artist {
+  font-size: 14px;
+  opacity: 40%;
+  margin-bottom: 4px;
+}
+
+.song {
+  margin-bottom: 20px;
+}
+
+/**
+ * Project stuff
+ */
+.project-category {
+  flex: 50%;
+  margin-bottom: 48px;
+}
+
+.project-link {
+  display:  inline-block;
+  font: $heading-font-family;
+  color: $text-color !important;
+  text-decoration: none;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px $brand-color;
+  }
+}
