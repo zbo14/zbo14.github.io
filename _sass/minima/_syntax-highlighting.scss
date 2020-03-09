@@ -9,10 +9,7 @@
     border: none !important;
   }
 
-  .highlighter-rouge & {
-    color: $brand-color !important;
-    border-left: 2px solid $grey-color-light;
-  }
+  .highlighter-rouge & {}
 
   .c { color: #998; font-style: italic } // Comment
 

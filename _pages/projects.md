@@ -39,7 +39,7 @@ layout: default
       <a class="project-link" href="/projects/nerv/">nerv</a>
     </div>
     <div class="project-category">
-      <h2>Miscellaneous</h2>
+      <h2>Miscellaneous❓</h2>
       <a class="project-link" href="/projects/bencode-hs/">bencode-hs</a>
       <a class="project-link" href="/projects/luhn-cli/">luhn-cli</a>
       <a class="project-link" href="/projects/rad-tree/">rad-tree</a>
