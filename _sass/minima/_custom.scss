@@ -1,0 +1,55 @@
+/**
+ * Music stuff
+ */
+
+.song-title{
+  margin-bottom: 4px;
+}
+
+.artist {
+  font-size: 14px;
+  opacity: 40%;
+  margin-bottom: 4px;
+}
+
+.song {
+  margin-bottom: 20px;
+}
+
+/**
+ * Project stuff
+ */
+.project-category {
+  flex: 50%;
+  margin-bottom: 48px;
+}
+
+.project-link {
+  display:  inline-block;
+  font: $heading-font-family;
+  color: $text-color !important;
+  text-decoration: none;
+  border: 1px dotted $grey-color-dark;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px $brand-color;
+  }
+}
+
+/**
+ * Profile pic
+ */
+.profpic {
+  border-radius: 50%;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  margin: 20px;
+  max-width: 100px;
+  max-height: 100px;
+}

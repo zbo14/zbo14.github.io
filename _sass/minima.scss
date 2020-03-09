@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+
+$text-font-family: 'Overpass Mono', monospace;
+$heading-font-family: 'Raleway', sans-serif;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #e6e6e6 !default;
+$background-color: #1d1d1d !default;
+$brand-color:      #eb73b3 !default;
+$link-color:       #879dff !default;
+
+$grey-color:       #4e4e4e !default;
+$grey-color-light: #6b6b6b !default;
+$grey-color-dark:  #313131 !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    900px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import
+  "minima/base",
+  "minima/custom",
+  "minima/layout",
+  "minima/syntax-highlighting"
+;
