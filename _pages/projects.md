@@ -3,6 +3,7 @@ title: "Projects"
 permalink: /projects/
 layout: default
 ---
+
 <div>
   <div style="display: flex;">
     <div class="project-category">
