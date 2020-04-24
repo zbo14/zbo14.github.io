@@ -7,6 +7,18 @@ layout: default
 <div>
   <div style="display: flex;">
     <div class="project-category">
+      <h2>Bug Bounty 🐛</h2>
+      <a class="project-link" href="/projects/retweak/">retweak</a>
+      <a class="project-link" href="/projects/sc0pe/">sc0pe</a>
+    </div>
+    <div class="project-category">
+      <h2>Machine learning 🤖</h2>
+      <a class="project-link" href="/projects/genalg/">genalg</a>
+      <a class="project-link" href="/projects/nerv/">nerv</a>
+    </div>
+  </div>
+  <div style="display: flex;">
+    <div class="project-category">
       <h2>Configuration ⚙️</h2>
       <a class="project-link" href="/projects/dotfiles/">dotfiles</a>
       <a class="project-link" href="/projects/install-tools/">install-tools</a>
@@ -35,16 +47,12 @@ layout: default
   </div>
   <div style="display: flex;">
     <div class="project-category">
-      <h2>Machine learning 🤖</h2>
-      <a class="project-link" href="/projects/genalg/">genalg</a>
-      <a class="project-link" href="/projects/nerv/">nerv</a>
-    </div>
-    <div class="project-category">
       <h2>Miscellaneous❓</h2>
       <a class="project-link" href="/projects/bencode-hs/">bencode-hs</a>
       <a class="project-link" href="/projects/luhn-cli/">luhn-cli</a>
       <a class="project-link" href="/projects/rad-tree/">rad-tree</a>
       <a class="project-link" href="/projects/tidepool/">tidepool</a>
     </div>
+    <div class="project-category"></div>
   </div>
 </div>
