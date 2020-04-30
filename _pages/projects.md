@@ -9,7 +9,6 @@ layout: default
     <div class="project-category">
       <h2>Bug Bounty 🐛</h2>
       <a class="project-link" href="/projects/retweak/">retweak</a>
-      <a class="project-link" href="/projects/sc0pe/">sc0pe</a>
     </div>
     <div class="project-category">
       <h2>Machine learning 🤖</h2>
