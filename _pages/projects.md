@@ -8,6 +8,7 @@ layout: default
   <div style="display: flex;">
     <div class="project-category">
       <h2>Bug Bounty 🐛</h2>
+      <a class="project-link" href="/projects/dirscour/">dirscour</a>
       <a class="project-link" href="/projects/retweak/">retweak</a>
     </div>
     <div class="project-category">
@@ -39,7 +40,6 @@ layout: default
       <h2>Web 🌐</h2>
       <a class="project-link" href="/projects/desync/">desync</a>
       <a class="project-link" href="/projects/dnsdump/">dnsdump</a>
-      <a class="project-link" href="/projects/shortn/">shortn</a>
       <a class="project-link" href="/projects/web-tree/">web-tree</a>
       <a class="project-link" href="/projects/this-website/">website</a>
     </div>
