@@ -40,8 +40,8 @@ layout: default
 
 ### Self-Employed, Bug Bounty Hunter // *Dec 2019 - present*
 - Participated in several public programs and refined web hacking skills
-- **March 2020:** awarded $150 for reported bug on Glassdoor's public program
-- **April 2020:** awarded $750 for reported bug on Robinhood's public program
+- **March 2020:** awarded $150 for bug reported to Glassdoor's public program
+- **April 2020:** awarded $750 for bug reported to Robinhood's public program
 
 ### Starry, Software Engineer // *Jun 2018 - Feb 2020*
 - Wrote code for and provided code review on several internal projects
