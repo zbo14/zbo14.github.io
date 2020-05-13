@@ -27,7 +27,7 @@ layout: default
     </tr>
     <tr>
       <td><b>Proxies:</b></td>
-      <td><i>HAProxy, HTTP/S, mitmproxy, SSH+SOCKS</i></td>
+      <td><i>Burp, HAProxy, HTTP/S, mitmproxy, SSH+SOCKS</i></td>
     </tr>
     <tr>
       <td><b>VPN:</b></td>
@@ -37,6 +37,11 @@ layout: default
 </table>
 
 ## Work Experience
+
+### Self-Employed, Bug Bounty Hunter // *Dec 2019 - present*
+- Participated in several public programs and refined web hacking skills
+- **March 2020:** awarded $150 for bug reported to Glassdoor's public program
+- **April 2020:** awarded $750 for bug reported to Robinhood's public program
 
 ### Starry, Software Engineer // *Jun 2018 - Feb 2020*
 - Wrote code for and provided code review on several internal projects
@@ -55,35 +60,8 @@ layout: default
 - Picked up Clojure and became familiar with code repositories
 - Wrote tests and benchmarks for API calls
 
-### Flutistry, Website Development Intern // *Jun 2014 - Dec 2014*
-- Developed multi-layered retail website for flute dealer/repair shop
-- Integrated and organized product inventory on ecommerce platform
-- Continued to improve functionality of site on a contract-work basis
-
 ## Education
 - Northwestern University // *Sep 2013 - Sep 2016*
-- Newton North High School // *Sep 2009 - June 2013*
-
-## College Course Work
-
-### Economics, Microeconomics, Macroeconomics, Econometrics
-Microeconomics course sequence covering consumer choice, producer choice, and equilibria in competitive and monopolistic markets. Macroeconomics course covering employment, unemployment, consumption, investment, interest rates, inflation, exchange rates, and trade balance. Econometrics course covering statistics, univariate and multiple regression, simultaneous equations, measurement error, and instrumental variables.
-
-### Mathematics, Multivariate Calculus, Linear Algebra
-Multivariate course sequence in vector algebra and functions, partial derivatives, double and triple integrals, cylindrical and spherical coordinates, line and surface integrals. Linear algebra course covering linear systems, matrix algebra, linear independence and determinants, eigenvalues and eigenvectors.
-
-### Introductory Statistics for the Social Sciences
-An introduction to basic concepts of statistics and probability. Covers methods of data collection, descriptive statistics, probability, estimation, sampling distributions, confidence intervals, and hypothesis testing.
-
-### Fundamentals of Computer Programming I, II
-Computer programming sequence taught in C++. Completed project model of the internet, which mocked networking and functionality of the web.
-
-### Intro to Artificial Intelligence
-Core techniques and applications of artificial intelligence. Representation retrieving and application of knowledge for problem solving. Hypothesis exploration, theorem proving, vision, and neural networks. Implementation in Python.
-
-## Awards & Honors
-* Dean’s List // *Sep 2013 - Jun 2014, Sep 2014 - Jun 2015*
-* Awardee, Freshman Seminar Writing Program // *May 2015*
 
 ## Interests
 * Computer networking
