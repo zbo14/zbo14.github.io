@@ -38,7 +38,7 @@ layout: default
 
 ## Work Experience
 
-### Self-Employed, Bug Bounty Hunter // *Dec 2019 - present*
+### Bug Bounty Hunter // *Dec 2019 - present*
 - Participated in several public programs and refined web hacking skills
 - **March 2020:** awarded $150 for bug reported to Glassdoor's public program
 - **April 2020:** awarded $750 for bug reported to Robinhood's public program
