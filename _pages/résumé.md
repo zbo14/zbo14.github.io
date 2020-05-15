@@ -69,7 +69,7 @@ Software engineer and novice bug bounty hunter interested in web application sec
 
 ## Interests
 * Computer networking
-* Cybersecurity
+* Cyber security
 * Learning programming languages
 * Playing keyboard and occasionally saxophone
 * Twin Peaks
