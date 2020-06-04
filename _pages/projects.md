@@ -8,7 +8,9 @@ layout: default
   <div style="display: flex;">
     <div class="project-category">
       <h2>Bug Bounty 🐛</h2>
-      <a class="project-link" href="/projects/retweak/">retweak</a>
+      <a class="project-link" href="/projects/giturls/">giturls</a>
+      <a class="project-link" href="/projects/puppetshow/">puppetshow</a>
+      <a class="project-link" href="/projects/sc0pe/">sc0pe</a>
     </div>
     <div class="project-category">
       <h2>Machine learning 🤖</h2>
@@ -39,7 +41,6 @@ layout: default
       <h2>Web 🌐</h2>
       <a class="project-link" href="/projects/desync/">desync</a>
       <a class="project-link" href="/projects/dnsdump/">dnsdump</a>
-      <a class="project-link" href="/projects/shortn/">shortn</a>
       <a class="project-link" href="/projects/web-tree/">web-tree</a>
       <a class="project-link" href="/projects/this-website/">website</a>
     </div>
