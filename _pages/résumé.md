@@ -5,6 +5,10 @@ layout: default
 ---
 # Résumé
 
+## Summary
+
+Software engineer and novice bug bounty hunter interested in web application security and computer networking. Looking for a backend development role with the opportunity to design and build software infrastructure.
+
 ## Technical Skills
 
 <table>
@@ -40,8 +44,8 @@ layout: default
 
 ### Bug Bounty Hunter // *Dec 2019 - present*
 - Participated in several public programs and refined web hacking skills
-- **March 2020:** awarded $150 for bug reported to Glassdoor's public program
-- **April 2020:** awarded $750 for bug reported to Robinhood's public program
+- **March 2020:** Awarded bounty for bug reported to Glassdoor's program on HackerOne
+- **April 2020:** Awarded bounty for bug reported to Robinhood's program on HackerOne
 
 ### Starry, Software Engineer // *Jun 2018 - Feb 2020*
 - Wrote code for and provided code review on several internal projects
@@ -61,11 +65,11 @@ layout: default
 - Wrote tests and benchmarks for API calls
 
 ## Education
-- Northwestern University // *Sep 2013 - Sep 2016*
+- Northwestern University // *Sep 2013 - Jun 2016*
 
 ## Interests
 * Computer networking
-* Cybersecurity
+* Cyber security
 * Learning programming languages
 * Playing keyboard and occasionally saxophone
 * Twin Peaks
