@@ -15,7 +15,7 @@ Software engineer and novice bug bounty hunter interested in web application sec
   <tbody>
     <tr>
       <td><b>Languages:</b></td>
-      <td><i>JavaScript, Python, Bash</i></td>
+      <td><i>JavaScript, Go, Python, Bash</i></td>
     </tr>
     <tr>
       <td><b>Platforms:</b></td>
@@ -31,7 +31,7 @@ Software engineer and novice bug bounty hunter interested in web application sec
     </tr>
     <tr>
       <td><b>Proxies:</b></td>
-      <td><i>Burp, HAProxy, HTTP/S, mitmproxy, SSH+SOCKS</i></td>
+      <td><i>Burp, HAProxy, HTTP/S, SSH+SOCKS</i></td>
     </tr>
     <tr>
       <td><b>VPN:</b></td>
@@ -44,8 +44,9 @@ Software engineer and novice bug bounty hunter interested in web application sec
 
 ### Bug Bounty Hunter // *Dec 2019 - present*
 - Participated in several public programs and refined web hacking skills
-- **March 2020:** Awarded bounty for bug reported to Glassdoor's program on HackerOne
+- **July 2020:** Awarded $2K bounty for bug reported to Robinhood's program on HackerOne
 - **April 2020:** Awarded bounty for bug reported to Robinhood's program on HackerOne
+- **March 2020:** Awarded bounty for bug reported to Glassdoor's program on HackerOne
 
 ### Starry, Software Engineer // *Jun 2018 - Feb 2020*
 - Wrote code for and provided code review on several internal projects
