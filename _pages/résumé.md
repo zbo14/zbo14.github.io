@@ -44,7 +44,7 @@ Software engineer and novice bug bounty hunter interested in web application sec
 
 ### Bug Bounty Hunter // *Dec 2019 - present*
 - Participated in several public programs and refined web hacking skills
-- **July 2020:** Awarded $2K bounty for bug reported to Robinhood's program on HackerOne
+- **July 2020:** Awarded $2K for bug reported to Robinhood's program on HackerOne
 - **April 2020:** Awarded bounty for bug reported to Robinhood's program on HackerOne
 - **March 2020:** Awarded bounty for bug reported to Glassdoor's program on HackerOne
 
