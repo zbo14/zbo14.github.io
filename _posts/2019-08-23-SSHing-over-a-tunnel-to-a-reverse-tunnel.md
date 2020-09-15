@@ -11,14 +11,13 @@ Suddenly, you remember you have an instance languishing in the cloud. Languishin
 
 This is where local port forwarding comes in. The laptop authenticates with the cloud and tells it to forward traffic to the reverse tunnel. In other words, the laptop establishes a (forward) tunnel to the rpi's reverse tunnel. Then we can SSH into the rpi through our tunnel system. The pretty diagram I drew below somewhat depicts the scenario I've described.
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.2.3/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js"></script>
 
 <div class="mermaid">
   graph LR
     subgraph cloud
     FPORT
     EPORT
-    style EPORT stroke-width:4px
     end
     subgraph rpi
     PORT1-->|1|EPORT
@@ -27,6 +26,14 @@ This is where local port forwarding comes in. The laptop authenticates with the 
     subgraph laptop
     PORT2-->|3|EPORT
     LPORT-. 4 .-> FPORT
+    style cloud fill:gray,stroke:gray
+    style rpi fill:gray,stroke:gray
+    style laptop fill:gray,stroke:gray
+    style EPORT stroke-width:4px
+    style 22 stroke:#e6e6e6
+    linkStyle default stroke-width:2px,fill:none,stroke:#e6e6e6
+    linkStyle 1 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
+    linkStyle 3 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
     end
 </div>
 
