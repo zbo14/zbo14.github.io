@@ -30,7 +30,6 @@ This is where local port forwarding comes in. The laptop authenticates with the 
     style rpi fill:gray,stroke:gray
     style laptop fill:gray,stroke:gray
     style EPORT stroke-width:4px
-    style 22 stroke:#e6e6e6
     linkStyle default stroke-width:2px,fill:none,stroke:#e6e6e6
     linkStyle 1 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
     linkStyle 3 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3

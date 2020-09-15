@@ -70,7 +70,6 @@ How can we prevent the coffee shop Wi-Fi snooper from seeing the destination add
 		end
 		subgraph cloud
 		EPORT
-		style EPORT stroke-width:4px
 		EPORT-->|2|443
 		end
     subgraph laptop
@@ -79,6 +78,7 @@ How can we prevent the coffee shop Wi-Fi snooper from seeing the destination add
     style reddit fill:gray,stroke:gray
     style cloud fill:gray,stroke:gray
     style laptop fill:gray,stroke:gray
+		style EPORT stroke-width:4px
     linkStyle default stroke-width:2px,fill:none,stroke:#e6e6e6
     linkStyle 2 stroke-width:2px,fill:none,stroke:#e6e6e6,stroke-dasharray:3
     end
