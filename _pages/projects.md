@@ -36,6 +36,7 @@ layout: default
       <h2>Encryption 🔐</h2>
       <a class="project-link" href="/projects/passworld/">passworld</a>
       <a class="project-link" href="/projects/recrypt/">recrypt</a>
+      <a class="project-link" href="/projects/triple-double/">triple-double</a>
     </div>
     <div class="project-category">
       <h2>Web 🌐</h2>
